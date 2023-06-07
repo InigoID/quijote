@@ -6,11 +6,9 @@ def contar_palabras(archivo_entrada, archivo_salida):
 
     with open(archivo_entrada, 'r', encoding='utf-8') as archivo_lectura:
         for linea in archivo_lectura:
-            # Eliminar signos de puntuación
             linea = linea.translate(str.maketrans("", "", string.punctuation))
             palabras = linea.strip().split()
             for palabra in palabras:
-                # Convertir las palabras a minúsculas
                 palabra = palabra.lower()
                 conteo_palabras[palabra] = conteo_palabras.get(palabra, 0) + 1
 
